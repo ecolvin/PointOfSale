@@ -5,9 +5,12 @@ function calculateReceipt()
   var receiptSubtotal = Number(getCookie("preTax"));
   var receiptTax = receiptSubtotal * 0.075;
   var receiptTotal = receiptSubtotal + receiptTax;
-  document.getElementById("sub").innerHTML = "$" + receiptSubtotal;
-  document.getElementById("tax").innerHTML = "$" + receiptTax;
-  document.getElementById("tot").innerHTML = "$" + receiptTotal;
+  var sub = receiptSubtotal.toFixed(2);
+  var tax = receiptTax.toFixed(2);
+  var tot = receiptTotal.toFixed(2);
+  document.getElementById("sub").innerHTML = "$" + sub;
+  document.getElementById("tax").innerHTML = "$" + tax;
+  document.getElementById("tot").innerHTML = "$" + tot;
 }
 
 function addItem()
